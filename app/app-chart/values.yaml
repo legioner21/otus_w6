@@ -1,0 +1,26 @@
+replicaCount: 1
+
+fullnameOverride: "app"
+
+image:
+  repository: legioner4/otis-work-app:6.1
+
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+ingress:
+  className: "nginx"
+
+
+postgresql:
+  enabled: true
+  postgresqlUsername: appuser
+  postgresqlPassword: apppasswd
+  postgresqlDatabase: appdb
+  persistence:
+    size: 0.1Gi
+  service:
+    port: "5432"

@@ -1,0 +1,11 @@
+1. app readme.txt
+
+3. minikube start
+4. minikube dashboard
+5. minikube addons  enable ingress
+6. minikube ip. записываем в hosts arch.homework полученный ip
+7. helm install postgresql oci://registry-1.docker.io/bitnamicharts/postgresql
+8. helm dependency build app/app-chart
+9. helm install app-otus6-app ./app/app-chart --debug --wait --timeout 30m --atomic   # helm uninstall app-otus6-app
+
+10. newman run work6.postman_collection.json
